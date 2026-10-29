@@ -61,11 +61,11 @@
 
   /* Zed the paper plane (inline SVG) */
   .zed { width: 140px; height: 110px; display: block; }
-  .zed .body { fill: #fff; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
-  .zed .fold { fill: #e9e3ff; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
-  .zed .cheek { fill: var(--pink); opacity: .55; }
-  .zed .eye { fill: var(--ink); }
-  .zed .lid { fill: #fff; transform-box: fill-box; transform-origin: center top; transform: scaleY(0); animation: blink 4.2s infinite; }
+  #zed-art .body { fill: #fff; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+  #zed-art .fold { fill: #e9e3ff; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+  #zed-art .cheek { fill: var(--pink); opacity: .55; }
+  #zed-art .eye { fill: var(--ink); }
+  #zed-art .lid { fill: #fff; transform-box: fill-box; transform-origin: center top; transform: scaleY(0); animation: blink 4.2s infinite; }
   @keyframes blink { 0%, 92%, 100% { transform: scaleY(0); } 95% { transform: scaleY(1); } }
   .floaty { animation: floaty 3s ease-in-out infinite; }
   @keyframes floaty { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-14px) rotate(3deg); } }
@@ -313,13 +313,6 @@
     });
   });
 
-  // Hero Zed's eyes follow the pointer a little
-  document.addEventListener("pointermove", e => {
-    document.querySelectorAll(".zed .eye").forEach(eye => {
-      const dx = (e.clientX / innerWidth - 0.5) * 3, dy = (e.clientY / innerHeight - 0.5) * 3;
-      eye.setAttribute("transform", `translate(${dx} ${dy})`);
-    });
-  });
 </script>
 </body>
 </html>
